@@ -1,0 +1,55 @@
+<div>PUT to http://localhost:8081/api/employees/9</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+    &quot;firstName&quot;: &quot;Art&quot;,
+    &quot;lastName&quot;: &quot;Von&quot;,
+    &quot;age&quot;: 28,
+    &quot;salary&quot;: 35000.0,
+    &quot;dateOfJoining&quot;: &quot;1992-09-26&quot;,
+    &quot;dob&quot;: &quot;1977-09-12&quot;,
+    &quot;emails&quot;: [
+        {
+            &quot;type&quot;: &quot;Home&quot;,
+            &quot;email&quot;: &quot;cristie.rau@gmail.com&quot;
+        },
+        {
+            &quot;type&quot;: &quot;Office&quot;,
+            &quot;email&quot;: &quot;karleen.nikolaus@hotmail.com&quot;
+        }
+    ]
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: */*</div>
+            <div>Content-Type: application/json</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X PUT &#39;http://localhost:8081/api/employees/9&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;firstName&quot;: &quot;Art&quot;,
+    &quot;lastName&quot;: &quot;Von&quot;,
+    &quot;age&quot;: 28,
+    &quot;salary&quot;: 35000.0,
+    &quot;dateOfJoining&quot;: &quot;1992-09-26&quot;,
+    &quot;dob&quot;: &quot;1977-09-12&quot;,
+    &quot;emails&quot;: [
+        {
+            &quot;type&quot;: &quot;Home&quot;,
+            &quot;email&quot;: &quot;cristie.rau@gmail.com&quot;
+        },
+        {
+            &quot;type&quot;: &quot;Office&quot;,
+            &quot;email&quot;: &quot;karleen.nikolaus@hotmail.com&quot;
+        }
+    ]
+}&#39;
+    </div>
+

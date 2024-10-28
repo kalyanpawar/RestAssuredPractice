@@ -1,0 +1,55 @@
+<div>POST to http://localhost:8081/api/employees</div>
+
+    <h4>Body</h4>
+    <div>
+    <pre class="preformated-text">
+{
+  &quot;firstName&quot;: &quot;Lawanda&quot;,
+  &quot;lastName&quot;: &quot;Ferry&quot;,
+  &quot;age&quot;: 20,
+  &quot;salary&quot;: 35000.0,
+  &quot;dateOfJoining&quot;: &quot;1992-09-26&quot;,
+  &quot;dob&quot;: &quot;1960-11-21&quot;,
+  &quot;emails&quot;: [
+    {
+      &quot;type&quot;: &quot;Office&quot;,
+      &quot;email&quot;: &quot;rolf.schinner@gmail.com&quot;
+    },
+    {
+      &quot;type&quot;: &quot;Home&quot;,
+      &quot;email&quot;: &quot;stewart.lesch@gmail.com&quot;
+    }
+  ]
+}    </pre>
+    </div>
+
+    <h4>Headers</h4>
+    <div>
+            <div>Accept: */*</div>
+            <div>Content-Type: text/plain; charset=ISO-8859-1</div>
+    </div>
+
+
+
+    <h4>Curl</h4>
+    <div>
+        curl -v -X POST &#39;http://localhost:8081/api/employees&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: text/plain; charset=ISO-8859-1&#39; -d &#39;{
+  &quot;firstName&quot;: &quot;Lawanda&quot;,
+  &quot;lastName&quot;: &quot;Ferry&quot;,
+  &quot;age&quot;: 20,
+  &quot;salary&quot;: 35000.0,
+  &quot;dateOfJoining&quot;: &quot;1992-09-26&quot;,
+  &quot;dob&quot;: &quot;1960-11-21&quot;,
+  &quot;emails&quot;: [
+    {
+      &quot;type&quot;: &quot;Office&quot;,
+      &quot;email&quot;: &quot;rolf.schinner@gmail.com&quot;
+    },
+    {
+      &quot;type&quot;: &quot;Home&quot;,
+      &quot;email&quot;: &quot;stewart.lesch@gmail.com&quot;
+    }
+  ]
+}&#39;
+    </div>
+
