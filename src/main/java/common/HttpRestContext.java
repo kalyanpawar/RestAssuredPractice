@@ -2,6 +2,7 @@ package common;
 
 import io.restassured.http.ContentType;
 import io.restassured.http.Method;
+import io.restassured.response.Response;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,15 @@ public class HttpRestContext {
     private int statusCode;
     private long timeTakenInSeconds;
     private IAuth auth;
+    private Response response;
+
+    public Response getResponse() {
+        return response;
+    }
+
+    public void setResponse(Response response) {
+        this.response = response;
+    }
 
     public String getBaseURL() {
         return baseURL;

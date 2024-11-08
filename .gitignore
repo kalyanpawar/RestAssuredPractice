@@ -5,6 +5,8 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
+.idea/
+.idea/vcs.xml
 .idea/modules.xml
 .idea/jarRepositories.xml
 .idea/compiler.xml
@@ -63,3 +65,7 @@ build/
 hs_err_pid*
 replay_pid*
 >>>>>>> 7ff5e6804e1df0619ad2a5b580c1a9099ccbbe21
+
+# files
+downloads/
+allure-results/

@@ -8,6 +8,7 @@ import common.JsonUtils;
 import common.Rest;
 import common.URL;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.testng.Assert;
 
 import java.net.HttpURLConnection;
@@ -98,6 +99,46 @@ public class ApiUtils {
         context.setResponseContentType(ContentType.JSON);
         HttpRestContext response = Rest.DELETE(context);
         Assert.assertEquals(response.getStatusCode(), HttpURLConnection.HTTP_NO_CONTENT);
+    }
+
+    // GET method
+    public static JsonObject getEmployeeByFirstName(HttpRestContext context, String firstName) {
+        context.setBaseURL(URL.BASE_URL);
+        context.setURI(String.format(URL.GET_EMPLOYEE_BY_FIRST_NAME, firstName));
+        context.setResponseContentType(ContentType.JSON);
+        HttpRestContext response = Rest.GET(context);
+        Assert.assertEquals(response.getStatusCode(), HttpURLConnection.HTTP_OK);
+        return JsonUtils.getJsonObjectForString(response.getResponseBody());
+    }
+
+    // GET method
+    public static JsonObject getEmployeeByLastName(HttpRestContext context, String lastName) {
+        context.setBaseURL(URL.BASE_URL);
+        context.setURI(String.format(URL.GET_EMPLOYEE_BY_LAST_NAME, lastName));
+        context.setResponseContentType(ContentType.JSON);
+        HttpRestContext response = Rest.GET(context);
+        Assert.assertEquals(response.getStatusCode(), HttpURLConnection.HTTP_OK);
+        return JsonUtils.getJsonObjectForString(response.getResponseBody());
+    }
+
+    // GET method
+    public static JsonObject getEmployeeByFirstAndLastName(HttpRestContext context, String firstName, String lastName) {
+        context.setBaseURL(URL.BASE_URL);
+        context.setURI(String.format(URL.GET_EMPLOYEE_BY_FIRST_AND_LAST_NAME, firstName, lastName));
+        context.setResponseContentType(ContentType.JSON);
+        HttpRestContext response = Rest.GET(context);
+        Assert.assertEquals(response.getStatusCode(), HttpURLConnection.HTTP_OK);
+        return JsonUtils.getJsonObjectForString(response.getResponseBody());
+    }
+
+    // GET method for Excel
+    public static Response getEmployeeExcel(HttpRestContext context) {
+        context.setBaseURL(URL.BASE_URL);
+        context.setURI(URL.EMPLOYEES_EXPORT_EXCEL);
+        context.setResponseContentType(ContentType.JSON);
+        HttpRestContext response = Rest.GET(context);
+        Assert.assertEquals(response.getStatusCode(), HttpURLConnection.HTTP_OK);
+        return response.getResponse();
     }
 
     // Generic method to validate JSON schema

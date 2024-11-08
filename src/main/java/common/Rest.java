@@ -102,6 +102,7 @@ public final class Rest {
 
             context.setResponseBody(response.getBody().asString());
             context.setTimeTakenInSeconds(response.getTime());
+            context.setResponse(response);
             return context;
         }
     }
