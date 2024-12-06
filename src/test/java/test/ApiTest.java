@@ -1,6 +1,7 @@
 package test;
 
 import com.google.gson.JsonObject;
+import common.GenerateExcel;
 import common.HttpRestContext;
 import enums.EmailType;
 import generator.DataGenerator;
@@ -9,9 +10,6 @@ import org.testng.annotations.Test;
 import utils.ApiUtils;
 import utils.EmployeesPage;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.*;
 
 public class ApiTest {
@@ -70,26 +68,11 @@ public class ApiTest {
     @Test
     public static void excelDataTest(){
         HttpRestContext context = ApiUtils.setContextForEmployees();
-
         Response response = ApiUtils.getEmployeeExcel(context);
+        String filePath = "downloads/output.xlsx";
 
-        // Validate response
-        if (response.statusCode() == 200) {
-            try (InputStream inputStream = response.asInputStream();
-                 FileOutputStream outputStream = new FileOutputStream("downloads/output.xlsx")) {
+        GenerateExcel.generateExcelFromResponse(response, filePath);
 
-                byte[] buffer = new byte[1024];
-                int bytesRead;
-                while ((bytesRead = inputStream.read(buffer)) != -1) {
-                    outputStream.write(buffer, 0, bytesRead);
-                }
-                System.out.println("Excel file downloaded successfully.");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("Failed to download the file. Status code: " + response.statusCode());
-        }
     }
 }
 

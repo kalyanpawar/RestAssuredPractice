@@ -93,7 +93,7 @@ public class ApiUtils {
     }
 
     // DELETE method
-    public static void deleteEmployee(HttpRestContext context, int id) {
+    public static void deleteEmployee(HttpRestContext context, Integer id) {
         context.setBaseURL(URL.BASE_URL);
         context.setURI(String.format(URL.GET_EMPLOYEE, id));
         context.setResponseContentType(ContentType.JSON);
