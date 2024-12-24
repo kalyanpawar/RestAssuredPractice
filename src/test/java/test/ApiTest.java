@@ -70,7 +70,6 @@ public class ApiTest {
         HttpRestContext context = ApiUtils.setContextForEmployees();
         Response response = ApiUtils.getEmployeeExcel(context);
         String filePath = "downloads/output.xlsx";
-
         GenerateExcel.generateExcelFromResponse(response, filePath);
 
     }

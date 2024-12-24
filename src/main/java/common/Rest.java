@@ -67,7 +67,7 @@ public final class Rest {
         }
 
         if (Objects.nonNull(context.getRequestContentType()) && !context.getRequestContentType().equals("")) {
-            requestSpecification.contentType(context.getRequestContentType().toString());
+            requestSpecification.contentType(context.getRequestContentType());
         }
 
         requestSpecification.given().log().all();
@@ -92,12 +92,12 @@ public final class Rest {
         } else {
             ((ValidatableResponse)response.then()).log().all();
             context.setStatusCode(response.statusCode());
-            context.setResponseContentType1(response.getContentType());
+            context.setResponseContentType(response.getContentType());
             Iterator var3 = response.headers().iterator();
 
             while(var3.hasNext()) {
                 Header header = (Header)var3.next();
-                context.getResponseHeaderParams().put(header.getName(), header.getValue());
+                context.getResponseHeader().put(header.getName(), header.getValue());
             }
 
             context.setResponseBody(response.getBody().asString());
@@ -139,12 +139,12 @@ public final class Rest {
         } else {
             ((ValidatableResponse)response.then()).log().all();
             context.setStatusCode(response.statusCode());
-            context.setResponseContentType1(response.contentType());
+            context.setResponseContentType(response.contentType());
             var3 = response.headers().iterator();
 
             while(var3.hasNext()) {
                 Header header = (Header)var3.next();
-                context.getResponseHeaderParams().put(header.getName(), header.getValue());
+                context.getResponseHeader().put(header.getName(), header.getValue());
             }
 
             context.setResponseBody(response.getBody().asString());
@@ -185,12 +185,12 @@ public final class Rest {
         } else {
             ((ValidatableResponse)response.then()).log().all();
             context.setStatusCode(response.statusCode());
-            context.setResponseContentType1(response.contentType());
+            context.setResponseContentType(response.contentType());
             var3 = response.headers().iterator();
 
             while(var3.hasNext()) {
                 Header header = (Header)var3.next();
-                context.getResponseHeaderParams().put(header.getName(), header.getValue());
+                context.getResponseHeader().put(header.getName(), header.getValue());
             }
 
             context.setResponseBody(response.getBody().asString());
@@ -217,12 +217,12 @@ public final class Rest {
         } else {
             ((ValidatableResponse)response.then()).log().all();
             context.setStatusCode(response.statusCode());
-            context.setResponseContentType1(response.getContentType());
+            context.setResponseContentType(response.getContentType());
             Iterator var3 = response.headers().iterator();
 
             while(var3.hasNext()) {
                 Header header = (Header)var3.next();
-                context.getResponseHeaderParams().put(header.getName(), header.getValue());
+                context.getResponseHeader().put(header.getName(), header.getValue());
             }
 
             context.setResponseBody(response.getBody().asString());

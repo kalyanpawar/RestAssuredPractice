@@ -16,13 +16,13 @@ public class HttpRestContext {
     private Map<String, Object> pathParams = new HashMap<>();
     private Map<String, Object> queryParams = new HashMap<>();
     private Map<String, Object> formParams = new HashMap<>();
-    private Map<String, String> responseHeaderParams = new HashMap<>();
+    private Map<String, String> responseHeader = new HashMap<>();
     private Map<String, Object> multiParts = new HashMap<>();
     private String requestBody;
     private String responseBody;
     private ContentType requestContentType;
-    private ContentType responseContentType;
-    private String responseContentType1;
+//    private ContentType responseContentType;
+    private String responseContentType;
     private int statusCode;
     private long timeTakenInSeconds;
     private IAuth auth;
@@ -100,12 +100,12 @@ public class HttpRestContext {
         this.formParams = formParams;
     }
 
-    public Map<String, String> getResponseHeaderParams() {
-        return responseHeaderParams;
+    public Map<String, String> getResponseHeader() {
+        return responseHeader;
     }
 
-    public void setResponseHeaderParams(Map<String, String> responseHeaderParams) {
-        this.responseHeaderParams = responseHeaderParams;
+    public void setResponseHeader(Map<String, String> responseHeader) {
+        this.responseHeader = responseHeader;
     }
 
     public Map<String, Object> getMultiParts() {
@@ -140,20 +140,20 @@ public class HttpRestContext {
         this.requestContentType = requestContentType;
     }
 
-    public ContentType getResponseContentType() {
+//    public ContentType getResponseContentType() {
+//        return responseContentType;
+//    }
+//
+//    public void setResponseContentType(ContentType responseContentType) {
+//        this.responseContentType = responseContentType;
+//    }
+
+    public String getResponseContentType() {
         return responseContentType;
     }
 
-    public void setResponseContentType(ContentType responseContentType) {
-        this.responseContentType = responseContentType;
-    }
-
-    public String getResponseContentType1() {
-        return responseContentType1;
-    }
-
-    public void setResponseContentType1(String responseContentType1) {
-        this.responseContentType1 = responseContentType1;
+    public void setResponseContentType(String responseContentType1) {
+        this.responseContentType = responseContentType1;
     }
 
     public int getStatusCode() {

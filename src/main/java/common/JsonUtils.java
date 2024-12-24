@@ -20,6 +20,17 @@ public class JsonUtils {
         }
     }
 
+    // Method to convert JSON string to JsonObject
+    public static JsonArray getJsonArrayForString(String jsonString) {
+        try {
+            return JsonParser.parseString(jsonString).getAsJsonArray();
+        } catch (JsonSyntaxException e) {
+            // Handle invalid JSON input
+            System.err.println("Failed to parse JSON: " + e.getMessage());
+            return null;
+        }
+    }
+
     /**
      *
      * @param object
